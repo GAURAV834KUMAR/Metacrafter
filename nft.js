@@ -9,7 +9,7 @@ Assessment Requirements
 */
 
 // create a variable to hold your NFT's
-const NFT=[];
+const NFT=[]
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
@@ -19,19 +19,19 @@ function mintNFT (name, eyeColor,type,country) {
             "EyeColor": eyeColor,
             "Type": type,
             "Country": country
-        }
+        };
         NFT.push(NFTs);
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-    for(let i in NFT){
+    for(let i=0;i<NFT.length;i++){
         console.log("\nNFT: "+(i+1));
-        console.log("Name: "+NFT[i].name);
-        console.log("EyeColor: "+NFT[i].eyeColor);
-        console.log("Type: "+NFT[i].type);
-        console.log("Country: "+NFT[i].country);
+        console.log("Name: "+NFT[i].Name);
+        console.log("EyeColor: "+NFT[i].EyeColor);
+        console.log("Type: "+NFT[i].Type);
+        console.log("Country: "+NFT[i].Country);
     }
 }
 
@@ -43,7 +43,7 @@ function getTotalSupply() {
 // call your functions below this line
 mintNFT("Gaurav","Black","wood","India");
 mintNFT("Bob","Brown","steal","US");
-mintNFT("Gaurav","Blue","UK");
+mintNFT("Alex","Blue","glass","UK");
 
 listNFTs();
 getTotalSupply();
