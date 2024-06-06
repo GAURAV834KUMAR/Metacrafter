@@ -1,4 +1,4 @@
-# MyToken Solidity Smart Contract
+# Solidity Smart Contract
 
 A simple Solidity smart contract for a token with minting and burning functionalities.
 
