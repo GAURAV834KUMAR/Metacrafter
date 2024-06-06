@@ -33,6 +33,6 @@ To access helper info, visit the [Remix Documentation](https://remix-ide.readthe
 ## Authors
 
 Gaurav  
-[@GauravHandle]([https://twitter.com/GauravHandle](https://www.linkedin.com/in/gaurav-kumar-18151819b/))
+[@GauravHandle](https://www.linkedin.com/in/gaurav-kumar-18151819b/)
 
 ## License
