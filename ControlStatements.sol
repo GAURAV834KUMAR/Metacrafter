@@ -1,27 +1,43 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract ControlStatements {
-    // This variable will hold the sum of the two numbers
-    uint public sum;
+contract SchoolGrades {
+    // Mapping to store student grades
+    mapping(address => uint) public grades;
 
-    // Function to add two numbers, making sure they are valid and no overflow occurs
-    function addNumbers(uint a, uint b)  public {
-        // Using require to check input values
-        require(a>0,"First number must be greater than zero");
-        require(b>0, "Second number must be greater than zero");
-        
-        // Adding numbers and checking overflow with assert
-        uint result = a+b;
-        assert(result>=a);
+    // Function to record a student's grade
+    function recordGrade(address student, uint grade) public {
+        // Require valid student address
+        require(student != address(0), "Invalid student address");
 
-        // Store the result in the state variable
-        sum = result;
+        // Require valid grade (between 0 and 100)
+        require(grade >= 0 && grade <= 100, "Invalid grade");
+
+        // Record the grade
+        grades[student] = grade;
     }
-    // Function to demonstrate how revert works
-    function testRevert(uint a) public pure {
-        if(a<10){
-            revert("Input must be at least 10");
-        }
+
+    // Function to get a student's grade
+    function getGrade(address student) public view returns (uint) {
+        // Require student has a recorded grade
+        require(grades[student] > 0, "No grade recorded for this student");
+
+        // Return the student's grade
+        return grades[student];
+    }
+
+    // Function to update a student's grade
+    function updateGrade(address student, uint newGrade) public {
+        // Require valid student address
+        require(student != address(0), "Invalid student address");
+
+        // Require valid new grade (between 0 and 100)
+        require(newGrade >= 0 && newGrade <= 100, "Invalid grade");
+
+        // Require student has an existing grade
+        require(grades[student] > 0, "No grade recorded for this student");
+
+        // Update the grade
+        grades[student] = newGrade;
     }
 }
